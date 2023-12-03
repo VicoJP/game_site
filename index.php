@@ -17,6 +17,8 @@ require_once "includes/function.php";
 
 <body>
     <header>
+
+
         <?php
         $ordem = $_GET['o'] ?? "ord-nome-asc";
         $chave = $_GET['c'] ?? "";
@@ -40,27 +42,13 @@ require_once "includes/function.php";
         </div>
         <?php include_once "topo.php"; ?>
     </header>
-    <script>
-        var tipoOrdem = localStorage.getItem("tipoOrdem");
-        var classeAtual = localStorage.getItem("ordemClass");
-        var ordemElement = document.getElementById(tipoOrdem);
-        if (classeAtual) {
-            ordemElement.className = classeAtual;
-        }
-        const mostrarTodos = document.getElementById('mostrar-todos');
-        console.log(mostrarTodos);
-
-        mostrarTodos.addEventListener('click', function() {
-            localStorage.setItem("ordemClass", "ordem");
-        })
-    </script>
 
     <div id="corpo">
         <h1>Escolha seu jogo</h1>
         <div class="pag">
             <?php
             if ($pagina !== 0) {
-            ?>
+                ?>
                 <a href="index.php?pagina=<?php echo $pagina - 1; ?>" class="pag-anterior">Página Anterior</a>
             <?php
             }
@@ -82,7 +70,7 @@ require_once "includes/function.php";
         <table class="listagem">
             <form method="get" id="busca" action="index.php">
                 <tr>
-                    <td>
+                    <td><input type="text" id="pesquisa" name="c" size="10" maxlength="40"><input type="submit" value="OK"></td>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-nome');" id="ord-nome" class="ordem">Nome <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-prod');" id="ord-prod" class="ordem">Produtora <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-nota');" id="ord-nota" class="ordem">Nota <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
@@ -98,35 +86,35 @@ require_once "includes/function.php";
                 case "ord-prod":
                     $q .= "ORDER BY p.produtora ASC";
                     break;
-                case "ord-nota":
-                    $q .= "ORDER BY j.nota ASC";
-                    break;
-                case "ord-gen":
+                    case "ord-nota":
+                        $q .= "ORDER BY j.nota ASC";
+                        break;
+                        case "ord-gen":
                     $q .= "ORDER BY j.genero ASC";
                     break;
-                case "ord-prod-desc":
+                    case "ord-prod-desc":
                     $q .= "ORDER BY p.produtora DESC";
                     break;
-                case "ord-nota-desc":
+                    case "ord-nota-desc":
                     $q .= "ORDER BY j.nota DESC";
                     break;
-                case "ord-gen-desc":
-                    $q .= "ORDER BY j.genero DESC";
+                    case "ord-gen-desc":
+                        $q .= "ORDER BY j.genero DESC";
+                        break;
+                        case "ord-nome-desc":
+                            $q .= "ORDER BY j.nome DESC";
                     break;
-                case "ord-nome-desc":
-                    $q .= "ORDER BY j.nome DESC";
-                    break;
-                case "ord-nome":
-                    $q .= "ORDER BY j.nome ASC";
-                    break;
-                default:
-                    $q .= "ORDER BY j.nome";
-                    break;
-            }
-            $q .= " LIMIT $limite OFFSET $offset";
-            $busca = $banco->query($q);
-            if (!$busca) {
-                echo "<tr><td>Não foi possivel executar a busca";
+                    case "ord-nome":
+                        $q .= "ORDER BY j.nome ASC";
+                        break;
+                        default:
+                        $q .= "ORDER BY j.nome";
+                        break;
+                    }
+                    $q .= " LIMIT $limite OFFSET $offset";
+                    $busca = $banco->query($q);
+                    if (!$busca) {
+                        echo "<tr><td>Não foi possivel executar a busca";
             } else {
                 if ($busca->num_rows == 0) {
                     echo "<tr><td id='no-reg'>Nenhum registro encontrado";
@@ -162,8 +150,23 @@ require_once "includes/function.php";
     var pagPost = document.querySelector('.pag-posterior')
     if (noReg) {
         pagPost.style.display = 'none';
-        console.log('passou por aqui')
     }
+</script>
+<script>
+    var tipoOrdem = localStorage.getItem("tipoOrdem");
+    var classeAtual = localStorage.getItem("ordemClass");
+    var ordemElement = document.getElementById(tipoOrdem);
+    if (classeAtual) {
+        debugger
+        ordemElement.className = classeAtual;
+        
+    }
+    const mostrarTodos = document.getElementById('mostrar-todos');
+    console.log(mostrarTodos);
+
+    mostrarTodos.addEventListener('click', function() {
+        localStorage.setItem("ordemClass", "ordem");
+    })
 </script>
 <script src="excluir-jogo.js"></script>
 <script src="filtrar.js"></script>

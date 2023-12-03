@@ -1,5 +1,5 @@
 <?php
-$pasta_destino = 'C:\\xampp\\htdocs\\site_game\\fotos\\';
+$pasta_destino = 'C:\\xampp\\htdocs\\site_game_att\\fotos\\';
 
 $nome_arquivo = $_FILES['arquivo']['name'];
 $caminho_arquivo = "$pasta_destino" . "$nome_arquivo";
