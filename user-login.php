@@ -15,7 +15,7 @@ require_once "includes/function.php";
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="icones/icon_page3.png" type="image/x-icon">
     <style>
-        div#corpo {
+        div.corpo {
             width: 270px;
             font-size: 15pt;
         }
@@ -27,7 +27,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div id="corpo">
+    <div class="corpo" id="login">
         <?php
         $u = $_POST['usuario'] ?? null;
         $s = $_POST['senha'] ?? null;
@@ -57,7 +57,7 @@ require_once "includes/function.php";
             }
         }
         ?>
-        <a href="index.php"><span class="material-icons">arrow_back_ios</span></a>
+        <a href="index.php" class="voltar"><span class="material-icons">arrow_back_ios</span></a>
     </div>
     <?php require_once "rodape.php"; ?>
 </body>

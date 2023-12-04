@@ -17,7 +17,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div id="corpo">
+    <div class="corpo">
         <?php
         $c = $_GET['cod'] ?? 0;
         $busca = $banco->query("select * from jogos where cod = '$c'");

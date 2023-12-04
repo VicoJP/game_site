@@ -16,7 +16,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div id="corpo">
+    <div class="corpo">
         <?php
              $jogo = $_GET['cod'];
         if (!is_admin() && !is_editor()) {

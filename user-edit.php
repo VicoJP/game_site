@@ -17,7 +17,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div id="corpo">
+    <div class="corpo">
 
         <?php
 

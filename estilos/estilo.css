@@ -5,15 +5,14 @@ body {
 
 }
 
-div#corpo {
+div.corpo {
     width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
     box-shadow: 0px 0px 30px #777;
 }
 
-div#corpo h1{
+div.corpo h1{
     margin-bottom: 50px;
 }
 
@@ -239,3 +238,57 @@ table.listagem.busca td:nth-child(2) {
     width: 48%; 
 } */
 
+.form.login h1{
+    font-size: 2.2rem;
+    margin: .5rem;
+}
+.form.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form tr{
+    display: flex;
+    flex-direction: column;
+}
+
+.form table{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form table tbody tr td input{
+    width: 100%;
+    padding: 0;
+    height: 1.6rem;
+    border-radius: .4rem;
+    background-color: rgb(27, 24, 22);
+    border: 1px solid  #6274F3;
+    color: white;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.form table tbody tr td input[type="submit"]{
+    height: 1.8rem;
+    background: linear-gradient(45deg, #3C3A99, #618FF7) ;
+    border: 0;
+    cursor: pointer;
+}
+
+#login{
+    background-color: rgb(27, 24, 22);
+    color: white;
+    border-radius: 0.6rem;
+    margin: 2rem auto;
+}
+
+.voltar{
+    color: white;
+    text-decoration: none;
+}
+
+.voltar:hover{
+    color: inherit;
+}

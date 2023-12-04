@@ -17,7 +17,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div id="corpo">
+    <div class="corpo">
         <h1>Cadastro de jogo</h1>
         <?php
         if (!is_admin()) {

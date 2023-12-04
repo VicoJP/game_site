@@ -43,7 +43,7 @@ require_once "includes/function.php";
         <?php include_once "topo.php"; ?>
     </header>
 
-    <div id="corpo">
+    <div class="corpo">
         <h1>Escolha seu jogo</h1>
         <div class="pag">
             <?php
