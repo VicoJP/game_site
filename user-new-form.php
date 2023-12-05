@@ -1,14 +1,14 @@
 <h1>Novo usuário</h1>
-<form action="user-new.php" method="post">
+<form action="user-new.php" method="post" class="form login">
 
     <table>
         <tr>
             <td>Usuário</td>
-            <td><input type="text" name="usuario" id="usuario" size="10" maxlength="10"></td>
+            <td><input type="text" name="usuario" id="usuario" maxlength="10" placeholder="Digite o usuário"></td>
         </tr>
         <tr>
             <td>Nome</td>
-            <td><input type="text" name="nome" id="nome" size="30" maxlength="30"></td>
+            <td><input type="text" name="nome" id="nome" maxlength="30" placeholder="Digite o nome"></td>
         </tr>
         <tr>
             <td>Tipo</td>
@@ -19,11 +19,11 @@
         </tr>
         <tr>
             <td>Senha</td>
-            <td><input type="password" name="senha1" id="senha1" size="10" maxlength="10"></td>
+            <td><input type="password" name="senha1" id="senha1" maxlength="10" placeholder="******"></td>
         </tr>
         <tr>
             <td>Confirme a senha</td>
-            <td><input type="password" name="senha2" id="senha2" size="10" maxlength="10"></td>
+            <td><input type="password" name="senha2" id="senha2" maxlength="10" placeholder="******"></td>
         </tr>
         <tr>
             <td><input type="submit" value="Salvar"></td>

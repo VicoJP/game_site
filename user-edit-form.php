@@ -4,8 +4,8 @@ $busca = $banco->query($q);
 $reg = $busca->fetch_object();
 ?>
 
-<h1>Alteração de Dados</h1>
-<form action="user-edit.php" method="post">
+<form action="user-edit.php" method="post" class="form login">
+    <h1>Alteração de Dados</h1>
     <table>
         
         <tr>
@@ -23,11 +23,11 @@ $reg = $busca->fetch_object();
         </tr>
         <tr>
             <td>Senha</td>
-            <td><input type="password" name="senha1" id="senha1" maxlength="10" size="10"></td>
+            <td><input type="password" name="senha1" id="senha1" maxlength="10" size="10" placeholder="******"></td>
         </tr>
         <tr>
             <td>Confirme a senha</td>
-            <td><input type="password" name="senha2" id="senha2" maxlength="10" size="10"></td>
+            <td><input type="password" name="senha2" id="senha2" maxlength="10" size="10" placeholder="******"></td>
         </tr>
         <tr>
             <td><input type="submit" value="Salvar"></td>

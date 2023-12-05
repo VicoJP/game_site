@@ -17,7 +17,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div class="corpo">
+    <div class="corpo login" id="user_edit">
 
         <?php
 
@@ -58,7 +58,7 @@ require_once "includes/function.php";
         }
 
         ?>
-        <a href="index.php"><span class="material-icons">arrow_back_ios</span></a>
+        <a href="index.php" class="voltar"><span class="material-icons">arrow_back_ios</span></a>
     </div>
     <?php require_once "rodape.php"; ?>
 </body>

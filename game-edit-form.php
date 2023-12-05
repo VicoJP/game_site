@@ -10,7 +10,7 @@ $produtora = $reg->produtoraCod;
 
 ?>
 
-<form action="game-edit.php?cod=<?php echo "$jogo"?>" method="post" enctype="multipart/form-data">
+<form action="game-edit.php?cod=<?php echo "$jogo"?>" method="post" enctype="multipart/form-data" class="form login">
             <table>
                 <tr>
                     <td>Nome do jogo</td>
@@ -52,11 +52,11 @@ $produtora = $reg->produtoraCod;
                 </tr>
                 <tr>
                     <td>Descricao</td>
-                    <td><input type="text" name="descricao" id="descricao" value="<?php echo $reg->descricao ?>"></td>
+                    <td><textarea name="descricao" id="descricao" value="<?php echo $reg->descricao ?>"><?php echo $reg->descricao ?></textarea></td>
                 </tr>
                 <tr>
                     <td>Envie a imagem</td>
-                    <td><img src="<?php $t = thumb($reg->capa); echo $t; ?>" class="full"></td>
+                    <td class="img_edit"><img src="<?php $t = thumb($reg->capa); echo $t; ?>" class="full"></td>
                     <td><input type="file" name="arquivo" id="arquivo"></td>
                 </tr>
                 <tr>

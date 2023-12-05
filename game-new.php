@@ -17,7 +17,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div class="corpo">
+    <div class="corpo login" id="game_new">
         <h1>Cadastro de jogo</h1>
         <?php
         if (!is_admin()) {
@@ -48,7 +48,7 @@ require_once "includes/function.php";
         }
 
         ?>
-        <a href="index.php"><span class="material-icons">arrow_back_ios</span></a>
+        <a href="index.php" class="voltar"><span class="material-icons">arrow_back_ios</span></a>
     </div>
 </body>
 

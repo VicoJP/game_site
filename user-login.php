@@ -15,11 +15,6 @@ require_once "includes/function.php";
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="icones/icon_page3.png" type="image/x-icon">
     <style>
-        div.corpo {
-            width: 270px;
-            font-size: 15pt;
-        }
-
         table td {
             padding: 5px;
         }
@@ -27,7 +22,7 @@ require_once "includes/function.php";
 </head>
 
 <body>
-    <div class="corpo" id="login">
+    <div class="corpo login" id="user_login">
         <?php
         $u = $_POST['usuario'] ?? null;
         $s = $_POST['senha'] ?? null;

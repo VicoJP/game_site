@@ -36,14 +36,13 @@ require_once "includes/function.php";
         $offset = $limite * $pagina;
         ?>
         <div class="logo">
-            <!-- Logo -->
             <img src="icones/icon_page3.png" alt="logo" id="logo-img">
             <h1>Games Area</h1>
         </div>
         <?php include_once "topo.php"; ?>
     </header>
 
-    <div class="corpo">
+    <div class="corpo" id="list_games">
         <h1>Escolha seu jogo</h1>
         <div class="pag">
             <?php
@@ -70,7 +69,12 @@ require_once "includes/function.php";
         <table class="listagem">
             <form method="get" id="busca" action="index.php">
                 <tr>
-                    <td><input type="text" id="pesquisa" name="c" size="10" maxlength="40"><input type="submit" value="OK"></td>
+                    <td>
+                    <div class="div_busca">
+                        <input type="text" id="pesquisa" name="c" size="10" maxlength="40">
+                        <button type="submit" class="search-button"><span class="material-icons busca">search</span></button>
+                    </div>
+                    </td>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-nome');" id="ord-nome" class="ordem">Nome <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-prod');" id="ord-prod" class="ordem">Produtora <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
                     <td><a href="javascript:void(0);" onclick="alterarOrdem('ord-nota');" id="ord-nota" class="ordem">Nota <span class="material-icons up">expand_less</span> <span class="material-icons down">expand_more</span><span class="material-icons normal"> unfold_more </span> </a>
@@ -157,7 +161,6 @@ require_once "includes/function.php";
     var classeAtual = localStorage.getItem("ordemClass");
     var ordemElement = document.getElementById(tipoOrdem);
     if (classeAtual) {
-        debugger
         ordemElement.className = classeAtual;
         
     }
@@ -168,7 +171,7 @@ require_once "includes/function.php";
         localStorage.setItem("ordemClass", "ordem");
     })
 </script>
-<script src="excluir-jogo.js"></script>
-<script src="filtrar.js"></script>
+<script src="js/excluir-jogo.js"></script>
+<script src="js/filtrar.js"></script>
 
 </html>
