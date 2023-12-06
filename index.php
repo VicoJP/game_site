@@ -43,7 +43,7 @@ require_once "includes/function.php";
     </header>
 
     <div class="corpo" id="list_games">
-        <h1>Escolha seu jogo</h1>
+        <h1 style="text-align: center;">Lista de jogos</h1>
         <div class="pag">
             <?php
             if ($pagina !== 0) {
@@ -137,7 +137,7 @@ require_once "includes/function.php";
                             echo "<a href='#' class='delete-game' data-game-id='$reg->cod'><span class='material-icons'>delete</span></a>";
                         } else if (is_editor()) {
                             echo "<td>";
-                            echo "<span class='material-icons'>edit</span> ";
+                            echo "<a href='game-edit.php?cod=$reg->cod'><span class='material-icons'>edit</span></a> ";
                         }
                     }
                 }
